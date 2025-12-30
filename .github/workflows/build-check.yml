@@ -18,9 +18,12 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: '20'
+        cache: 'npm'
     
     - name: Install dependencies
-      run: npm install --legacy-peer-deps
+      run: |
+        npm install --legacy-peer-deps
+        npm rebuild lightningcss --legacy-peer-deps
     
     - name: Run linter (if available)
       run: npm run lint || echo "No lint script found"
