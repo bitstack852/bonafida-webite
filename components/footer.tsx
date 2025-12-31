@@ -14,9 +14,9 @@ export function Footer() {
               alt="Bonafida Corporate Advisory Limited"
               width={300}
               height={80}
-              className="h-20 w-auto"
+              className="h-20 w-auto mx-auto"
             />
-            <p className="text-sm text-muted-foreground leading-relaxed">
+            <p className="text-sm text-muted-foreground leading-relaxed mt-2">
               Trusted Hong Kong corporate advisory firm with 75+ years combined expertise.
             </p>
           </div>
@@ -31,17 +31,17 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                <Link href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   Services
                 </Link>
               </li>
               <li>
-                <Link href="/team" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                <Link href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   Team
                 </Link>
               </li>
               <li>
-                <Link href="/news" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                <Link href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   News
                 </Link>
               </li>
@@ -59,7 +59,7 @@ export function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/services/accounting"
+                  href="#"
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   Accounting & Payroll
@@ -67,7 +67,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/services/business-advisory"
+                  href="#"
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   Business Advisory
@@ -75,7 +75,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/services/corporate-secretarial"
+                  href="#"
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   Corporate Secretarial
@@ -83,7 +83,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/services/financial-advisory"
+                  href="#"
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   Financial Advisory
@@ -117,10 +117,10 @@ export function Footer() {
             © {new Date().getFullYear()} Bonafida Corporate Advisory Limited. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <Link href="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+            <Link href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+            <Link href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
               Terms of Service
             </Link>
           </div>

@@ -7,15 +7,26 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { Menu, ChevronDown } from "lucide-react"
 import { useState } from "react"
 
+const serviceLinks = [
+  { href: "#", label: "Accounting & Payroll" },
+  { href: "#", label: "Business Advisory" },
+  { href: "#", label: "Corporate Secretarial" },
+  { href: "#", label: "Financial Advisory" },
+  { href: "#", label: "Human Resources Advisory" },
+  { href: "#", label: "Legal Counselling" },
+  { href: "#", label: "Tax Advisory" },
+]
+
 export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [servicesOpen, setServicesOpen] = useState(false)
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-25">
           {/* Logo */}
-          <Link href="/" className="flex-shrink-0">
+          <Link href="/" className="flex-shrink-0 mx-auto lg:mx-0">
             <Image
               src="/images/logo-bonafida.png"
               alt="Bonafida Corporate Advisory Limited"
@@ -36,27 +47,11 @@ export function Navigation() {
                 Services <ChevronDown className="h-4 w-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent align="start" className="w-56">
-                <DropdownMenuItem asChild>
-                  <Link href="/services/accounting">Accounting & Payroll</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/services/business-advisory">Business Advisory</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/services/corporate-secretarial">Corporate Secretarial</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/services/financial-advisory">Financial Advisory</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/services/hr-advisory">Human Resources Advisory</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/services/legal">Legal Counselling</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/services/tax-advisory">Tax Advisory</Link>
-                </DropdownMenuItem>
+                {serviceLinks.map((service) => (
+                  <DropdownMenuItem key={service.href} asChild>
+                    <Link href={service.href}>{service.label}</Link>
+                  </DropdownMenuItem>
+                ))}
               </DropdownMenuContent>
             </DropdownMenu>
 
@@ -83,8 +78,12 @@ export function Navigation() {
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button className="lg:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+          {/* Mobile Menu Button - Hidden, will be shown below logo */}
+        </div>
+
+        {/* Mobile Menu Button - Centered below logo */}
+        <div className="lg:hidden flex justify-center pb-4">
+          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
             <Menu className="h-6 w-6" />
           </button>
         </div>
@@ -96,9 +95,23 @@ export function Navigation() {
               <Link href="/" className="text-sm font-medium">
                 Home
               </Link>
-              <Link href="/services" className="text-sm font-medium">
-                Services
-              </Link>
+              
+              <button 
+                onClick={() => setServicesOpen(!servicesOpen)}
+                className="text-sm font-medium text-left flex items-center justify-between"
+              >
+                Services <ChevronDown className={`h-4 w-4 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
+              </button>
+              {servicesOpen && (
+                <div className="pl-4 flex flex-col gap-2">
+                  {serviceLinks.map((service) => (
+                    <Link key={service.href} href={service.href} className="text-sm">
+                      {service.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+              
               <Link href="/team" className="text-sm font-medium">
                 Team
               </Link>
@@ -109,7 +122,9 @@ export function Navigation() {
                 Contact
               </Link>
               <Button variant="outline" asChild className="w-full bg-transparent">
-                <Link href="/login">Login</Link>
+                <Link href="https://bonafida.admin.entitydesk.com" target="_blank" rel="noopener noreferrer">
+                  Login
+                </Link>
               </Button>
               <Button asChild className="w-full">
                 <Link href="/contact">Book Consultation</Link>

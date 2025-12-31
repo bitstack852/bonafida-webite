@@ -33,11 +33,11 @@ export default function ContactPage() {
     <>
       <Navigation />
 
-      <main className="min-h-screen pt-20">
+      <main className="min-h-screen pt-15">
         {/* Hero Section */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-white via-primary/5 to-secondary/5 py-16 lg:py-24">
+        <section className="relative overflow-hidden bg-gradient-to-br from-white via-primary/5 to-secondary/5 py-30 lg:py-25">
           <div className="container mx-auto px-4 relative z-10">
-            <div className="max-w-3xl mx-auto text-center">
+            <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl lg:text-5xl font-bold mb-4 text-balance">Let's Discuss Your Business Needs</h1>
               <p className="text-lg text-muted-foreground text-pretty leading-relaxed">
                 Reach out to our team for expert corporate advisory services tailored to your requirements
@@ -47,7 +47,7 @@ export default function ContactPage() {
         </section>
 
         {/* Contact Section */}
-        <section className="py-16 lg:py-24">
+        <section className="py-16 lg:py-15">
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
               {/* Contact Form */}
@@ -206,19 +206,6 @@ export default function ContactPage() {
                     <div className="w-full h-64 bg-muted rounded-lg flex items-center justify-center">
                       <p className="text-muted-foreground">Map placeholder</p>
                     </div>
-                  </CardContent>
-                </Card>
-
-                {/* Additional CTA */}
-                <Card className="bg-gradient-to-br from-primary to-secondary text-white">
-                  <CardContent className="p-6">
-                    <h3 className="text-xl font-bold mb-2">Prefer to Speak Directly?</h3>
-                    <p className="mb-4 text-white/90">
-                      Schedule a consultation call with our experts at a time that works for you.
-                    </p>
-                    <Button variant="secondary" className="w-full">
-                      Book Consultation
-                    </Button>
                   </CardContent>
                 </Card>
               </div>
